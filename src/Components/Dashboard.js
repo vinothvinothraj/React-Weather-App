@@ -58,7 +58,7 @@ const Dashboard = () => {
             {city && <h4 id='cityh4'>{city}</h4>}
             {weather && (
               <div className='one'>
-                  <h1>{weather.main.temp}°K</h1>
+                  <h1>{(weather.main.temp - 273.15).toFixed(2)}°C</h1>
                   
                   <br />
                 <div className='weather'>
@@ -86,7 +86,7 @@ const Dashboard = () => {
                     <h4>Day: 0{index + 1}</h4>
                     <div className='days'>
                       <p>Weather: {item.weather[0].description}</p>
-                      <p>Temperature: {item.main.temp}°K</p>
+                      <p>Temperature: {(weather.main.temp - 273.15).toFixed(2)}°C</p>
                     </div>
                   </div>
                 ))}
